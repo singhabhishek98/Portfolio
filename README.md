@@ -1,4 +1,4 @@
-<div aligne="center">📌 Portfolio<h3><div/>
+<div align="center">📌 Portfolio<h3><div/>
 
 Welcome to my personal portfolio! This project showcases my skills, projects, and experience in web development.
 
@@ -60,5 +60,5 @@ Feel free to contribute! You can fork the repo, create a new branch, make change
 
 ---
 
-<div aligne="right"> style=Made with ❤️ by **Abhishek Singh**<h3> 🚀<div/>
+<div align="right"> style=Made with ❤️ by **Abhishek Singh**<h3> 🚀<div/>
 
