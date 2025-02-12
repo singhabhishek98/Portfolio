@@ -3,7 +3,7 @@
     "@fullhuman/postcss-purgecss": {
       "content": [
         "./**/*.html"
-      ],
+       ],
       "variables": true,
       "safelist": [
         "is-invalid",
