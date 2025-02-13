@@ -10,7 +10,11 @@ const charCounter = document.querySelector('.valid-feedback');
 
 const emailPattern =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const API_URL = '<YOUR_FORM_URL_HERE>';
+
+// EmailJS configuration
+const SERVICE_ID = 'service_ga3651o';
+const TEMPLATE_ID = 'template_8lfbjzq'; // Replace with your actual template ID
+const USER_ID = 'Hrg8hqQiqNUHEGlgf'; // Your public key
 
 const warningClass = 'is-invalid';
 const successClass = 'is-valid';
@@ -44,7 +48,7 @@ subjectInput.addEventListener('keyup', e => {
 });
 
 messageInput.addEventListener('keyup', e => {
-  setUpClasses(e, e.target.value.split(' ').length > 5 ? true : false);
+  setUpClasses(e, e.target.value.length >= 2 ? true : false);
   checkAllInputs();
   charCounter.textContent = `${messageInput.value.length} / 400`;
 });
@@ -55,7 +59,7 @@ function checkAllInputs() {
     nameInput.value.length > 1 &&
     emailInput.value.match(emailPattern) &&
     subjectInput.value.length > 2 &&
-    messageInput.value.split(' ').length > 5
+    messageInput.value.split(' ').length > 1
       ? false
       : true;
 }
@@ -65,17 +69,27 @@ async function sendEmail(e) {
   e.preventDefault();
   submitButton.style.display = 'none';
   spinner.style.display = 'inline-block';
-  let data = new FormData(contactForm);
-  await fetch(API_URL, {
-    method: 'POST',
-    body: data
-  });
-  spinner.style.display = 'none';
-  thanksMessage.style.display = 'block';
-  e.target.reset();
-  [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
-    input.classList.remove(successClass);
-  });
+
+  const templateParams = {
+    name: nameInput.value,
+    email: emailInput.value,
+    subject: subjectInput.value,
+    message: messageInput.value,
+  };
+
+  try {
+    await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
+    thanksMessage.style.display = 'block';
+    e.target.reset();
+    [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
+      input.classList.remove(successClass);
+    });
+  } catch (error) {
+    console.error('Failed to send email:', error);
+  } finally {
+    spinner.style.display = 'none';
+    submitButton.style.display = 'block';
+  }
 }
 
 contactForm.addEventListener('submit', sendEmail);
