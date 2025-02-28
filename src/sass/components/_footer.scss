@@ -1,6 +1,6 @@
 #footer {
   background-color: var(--bs-secondary);
-  padding: 2.5rem 0;
+  padding: 1rem 0;
 
   .row {
     p {
@@ -16,7 +16,7 @@
 
       a {
         text-decoration: none;
-        margin-left: 0.5rem;
+        margin: 0 1rem; // Adjusted for equal spacing
         @include font-secondary;
 
         &:hover {
@@ -47,10 +47,14 @@
         }
 
         &:nth-child(2) {
-          margin-left: 1rem;
-          margin-right: 1rem;
+          margin-left: 0.5rem; // Removed for equal spacing
+          margin-right: 0.5rem; // Removed for equal spacing
         }
       }
     }
+  }
+
+  .bi {
+    font-size: 1.5rem; /* Adjust the size as needed */
   }
 }
