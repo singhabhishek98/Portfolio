@@ -60,5 +60,5 @@ Feel free to contribute! You can fork the repo, create a new branch, make change
 
 ---
 
-<div align="right"> style=Made with ❤️ by **Abhishek Singh**<h3> 🚀<div/>
+<div align="right">Made with ❤️ by **Abhishek Singh**<h3> 🚀<div/>
 
