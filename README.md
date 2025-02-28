@@ -8,8 +8,6 @@ Check out the live version of my portfolio:
 
 ## 🛠️ Tech Stack
 - **Frontend:** React.js, HTML, CSS, JavaScript, Bootstrap
-- **Backend:** Node.js, Express.js (if applicable)
-- **Database:** MongoDB, Firebase (if applicable)
 - **Version Control:** Git & GitHub
 - **Deployment:** Vercel / Netlify / GitHub Pages
 
