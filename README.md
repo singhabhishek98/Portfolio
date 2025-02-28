@@ -50,7 +50,7 @@ my_portfolio/
    ```
 5. Open in browser:
    ```
-http://localhost:3000```
+http://localhost:3000
 
 ## 📢 Contributing
 Feel free to contribute! You can fork the repo, create a new branch, make changes, and submit a pull request.
