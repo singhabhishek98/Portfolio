@@ -73,7 +73,3 @@ Feel free to contribute! Fork the repo, create a new branch, make changes, and s
     <h3>Made with ❤️ by **Abhishek Singh** 🚀</h3>
 </div>
 
----
-
-<div align="right"> style=Made with ❤️ by **Abhishek Singh**<h3> 🚀<div/>
-
