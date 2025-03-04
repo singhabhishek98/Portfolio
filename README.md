@@ -1,4 +1,6 @@
-<div align="center">📌 Portfolio<h3><div/>
+<div align="center">
+    <h3>📌 Portfolio</h3>
+</div>
 
 Welcome to my personal portfolio! This project showcases my skills, projects, and experience in web development.
 
@@ -7,31 +9,37 @@ Check out the live version of my portfolio:
 [Portfolio Link](https://port98.netlify.app/)
 
 ## 🛠️ Tech Stack
-- **Frontend:** React.js, HTML, CSS, JavaScript, Bootstrap
-- **Backend:** Node.js, Express.js (if applicable)
-- **Database:** MongoDB, Firebase (if applicable)
+- **Frontend:** React.js, HTML, CSS, JavaScript, SCSS
 - **Version Control:** Git & GitHub
 - **Deployment:** Vercel / Netlify / GitHub Pages
 
-## 📂 Project Structure
+## 💂️ Project Structure
 ```
-my_portfolio/
-│── public/
+Port/
+│── node_modules/
 │── src/
+│   ├── fonts/
+│   ├── img/
+│   ├── js/
+│   ├── base/
 │   ├── components/
-│   ├── pages/
-│   ├── assets/
 │── .gitignore
+│── .postcssrc
+│── package-lock.json
 │── package.json
 │── README.md
+│── vite.config.js
+│── index.html
+│── main.scss
 ```
 
 ## 📸 Features
 - 🏠 **Home Page:** A brief introduction and welcome message
 - 👨‍💻 **About Me:** My skills, education, and experience
 - 🛠 **Projects:** Showcases of my previous work with live links and GitHub repositories
-- 📩 **Contact:** Contact form and social media links
-- 🎨 **Fully Responsive:** Works on all screen sizes
+- 💎 **Fully Responsive:** Optimized for all screen sizes
+- 📢 **Contact:** Contact form and social media links
+- ✨ **SCSS Styling:** Better styling and modular CSS
 
 ## 📌 Installation & Usage
 1. Clone the repository:
@@ -40,7 +48,7 @@ my_portfolio/
    ```
 2. Navigate to the project directory:
    ```sh
-   cd my_portfolio
+   cd Port
    ```
 3. Install dependencies:
    ```sh
@@ -48,15 +56,22 @@ my_portfolio/
    ```
 4. Start the development server:
    ```sh
-   npm start
+   npm run dev
    ```
 5. Open in browser:
    ```
-http://localhost:3000```
+   http://localhost:5173
+   ```
+   *(Vite's default port is 5173, not 3000)*
 
 ## 📢 Contributing
-Feel free to contribute! You can fork the repo, create a new branch, make changes, and submit a pull request.
+Feel free to contribute! Fork the repo, create a new branch, make changes, and submit a pull request.
 
+---
+
+<div align="right">
+    <h3>Made with ❤️ by **Abhishek Singh** 🚀</h3>
+</div>
 
 ---
 
