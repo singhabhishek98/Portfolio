@@ -1,0 +1,60 @@
+#footer {
+  background-color: var(--bs-secondary);
+  padding: 1rem 0;
+
+  .row {
+    p {
+      color: var(--bs-primary);
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      @include media($bp-lg) {
+        justify-content: start;
+        margin-bottom: 0 !important;
+      }
+
+      a {
+        text-decoration: none;
+        margin: 0 1rem; // Adjusted for equal spacing
+        @include font-secondary;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:visited {
+          color: rgb(0, 0, 0);
+        }
+      }
+    }
+
+    div:last-child {
+      text-align: right;
+      font-size: 2rem;
+      text-align: center;
+      @include media($bp-lg) {
+        text-align: right;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--bs-primary);
+        @include transition;
+
+        &:hover {
+          color: var(--bs-accent);
+        }
+
+        &:nth-child(0) {
+          margin-left: 0.5rem; // Removed for equal spacing
+          margin-right: 0.5rem; // Removed for equal spacing
+        }
+      }
+    }
+  }
+
+  .bi {
+    font-size: 1.5rem; /* Adjust the size as needed */
+  }
+}
