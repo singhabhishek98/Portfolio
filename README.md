@@ -6,7 +6,7 @@ Welcome to my personal portfolio! This project showcases my skills, projects, an
 
 ## 🚀 Live Demo
 Check out the live version of my portfolio:
-[Portfolio Link](https://port98.netlify.app/)
+[Portfolio Link](https://codebyabhi.netlify.app/)
 
 ## 🛠️ Tech Stack
 - **Frontend:** React.js, HTML, CSS, JavaScript, SCSS
@@ -73,7 +73,4 @@ Feel free to contribute! Fork the repo, create a new branch, make changes, and s
     <h3>Made with ❤️ by **Abhishek Singh** 🚀</h3>
 </div>
 
----
-
-<div align="right"> style=Made with ❤️ by **Abhishek Singh**<h3> 🚀<div/>
 
