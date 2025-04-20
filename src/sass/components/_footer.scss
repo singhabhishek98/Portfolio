@@ -1,60 +1,105 @@
+/* Styles for the footer */
 #footer {
-  background-color: var(--bs-secondary);
-  padding: 1rem 0;
+  background: linear-gradient(180deg, var(--bs-secondary), #1a1a1a);
+  padding: 1.2rem 0; /* Reduced padding */
+  border-top: 3px solid var(--bs-accent);
+  color: var(--bs-primary);
+}
 
-  .row {
-    p {
-      color: var(--bs-primary);
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      @include media($bp-lg) {
-        justify-content: start;
-        margin-bottom: 0 !important;
-      }
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* Reduced gap */
+}
 
-      a {
-        text-decoration: none;
-        margin: 0 1rem; // Adjusted for equal spacing
-        @include font-secondary;
+.footer-section {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+}
 
-        &:hover {
-          text-decoration: underline;
-        }
+.footer-section.copyright p {
+  margin: 0;
+  font-size: 0.95rem;
+}
 
-        &:visited {
-          color: rgb(0, 0, 0);
-        }
-      }
-    }
+.footer-section.copyright a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  font-family: var(--font-secondary, sans-serif);
+}
 
-    div:last-child {
-      text-align: right;
-      font-size: 2rem;
-      text-align: center;
-      @include media($bp-lg) {
-        text-align: right;
-      }
+.footer-section.copyright a:hover {
+  text-decoration: underline;
+  color: var(--bs-accent);
+}
 
-      a {
-        text-decoration: none;
-        color: var(--bs-primary);
-        @include transition;
+/* Quick links with hover underline animation */
+.footer-section.quick-links a {
+  position: relative;
+  color: var(--bs-primary);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 0.95rem;
+  font-family: var(--font-secondary, sans-serif);
+  transition: color 0.3s ease;
+}
 
-        &:hover {
-          color: var(--bs-accent);
-        }
+.footer-section.quick-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--bs-accent);
+  transition: width 0.3s ease;
+}
 
-        &:nth-child(0) {
-          margin-left: 0.5rem; // Removed for equal spacing
-          margin-right: 0.5rem; // Removed for equal spacing
-        }
-      }
-    }
+.footer-section.quick-links a:hover {
+  color: var(--bs-accent);
+}
+
+.footer-section.quick-links a:hover::after {
+  width: 100%;
+}
+
+/* Social media icons */
+.footer-section.social-links a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  margin: 0 0.25rem;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.footer-section.social-links a:hover {
+  color: var(--bs-accent);
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
-  .bi {
-    font-size: 1.5rem; /* Adjust the size as needed */
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section.social-links a {
+    margin: 0.4rem;
   }
 }
+/* End of footer styles */
