@@ -6,15 +6,36 @@
   position: fixed;
   bottom: 3vh;
   right: 3vh;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
 
   i {
     filter: drop-shadow(0 3px 5px rgba(var(--bs-primary-rgb), 1));
+    transition: filter 0.3s ease;
   }
 
   .bi-brightness-high-fill {
     display: none;
   }
-  .bi bi-github{
-    color:aqua;
+
+  &:hover,
+  &:focus {
+    color: var(--bs-accent);
+    outline: none;
+    transform: scale(1.2);
+  }
+}
+
+/* Transition for theme change */
+.theme-transition {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Responsive adjustments for dark mode button */
+@media (max-width: 768px) {
+  #theme {
+    font-size: 1.2rem;
+    bottom: 5vh;
+    right: 5vw;
   }
 }

@@ -18,10 +18,26 @@ const themes = {
     secondaryRGB: '162,161,166'
   }
 };
+
 let isLight = true;
 
+// On page load, check localStorage for theme preference
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    applyTheme(themes.dark);
+    moonIcon.style.display = 'none';
+    sunIcon.style.display = 'block';
+    isLight = false;
+  } else {
+    applyTheme(themes.light);
+    moonIcon.style.display = 'block';
+    sunIcon.style.display = 'none';
+    isLight = true;
+  }
+});
+
 themeToggler.addEventListener('click', toggleThemes);
-// crosshair grab
 
 function applyTheme(obj) {
   document.documentElement.style.setProperty('--bs-primary', obj.primary);
@@ -35,6 +51,11 @@ function applyTheme(obj) {
     '--bs-secondary-rgb',
     obj.secondaryRGB
   );
+  // Add transition class for smooth theme change
+  document.documentElement.classList.add('theme-transition');
+  window.setTimeout(function() {
+    document.documentElement.classList.remove('theme-transition');
+  }, 500);
 }
 
 function toggleThemes() {
@@ -42,11 +63,13 @@ function toggleThemes() {
     applyTheme(themes.dark);
     moonIcon.style.display = 'none';
     sunIcon.style.display = 'block';
+    localStorage.setItem('theme', 'dark');
     isLight = false;
   } else {
     applyTheme(themes.light);
     moonIcon.style.display = 'block';
     sunIcon.style.display = 'none';
+    localStorage.setItem('theme', 'light');
     isLight = true;
   }
 }

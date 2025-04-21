@@ -8,8 +8,7 @@ const thanksMessage = document.querySelector('.thanks');
 const spinner = document.querySelector('.spinner-border');
 const charCounter = document.querySelector('.valid-feedback');
 
-const emailPattern =
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailPattern = new RegExp("^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$");
 
 // EmailJS configuration
 const SERVICE_ID = 'service_ga3651o';
@@ -33,22 +32,22 @@ function setUpClasses(e, isValid) {
 }
 
 nameInput.addEventListener('keyup', e => {
-  setUpClasses(e, e.target.value.length > 1 ? true : false);
+  setUpClasses(e, e.target.value.trim().length > 1 ? true : false);
   checkAllInputs();
 });
 
 emailInput.addEventListener('keyup', e => {
-  setUpClasses(e, e.target.value.match(emailPattern) ? true : false);
+  setUpClasses(e, e.target.value.trim().match(emailPattern) ? true : false);
   checkAllInputs();
 });
 
 subjectInput.addEventListener('keyup', e => {
-  setUpClasses(e, e.target.value.length > 2 ? true : false);
+  setUpClasses(e, e.target.value.trim().length > 2 ? true : false);
   checkAllInputs();
 });
 
 messageInput.addEventListener('keyup', e => {
-  setUpClasses(e, e.target.value.length >= 2 ? true : false);
+  setUpClasses(e, e.target.value.trim().length >= 2 ? true : false);
   checkAllInputs();
   charCounter.textContent = `${messageInput.value.length} / 400`;
 });
@@ -56,10 +55,10 @@ messageInput.addEventListener('keyup', e => {
 // disable submitButton if the inputs have not achieved the conditions
 function checkAllInputs() {
   submitButton.disabled =
-    nameInput.value.length > 1 &&
-    emailInput.value.match(emailPattern) &&
-    subjectInput.value.length > 2 &&
-    messageInput.value.split(' ').length > 1
+    nameInput.value.trim().length > 1 &&
+    emailInput.value.trim().match(emailPattern) &&
+    subjectInput.value.trim().length > 2 &&
+    messageInput.value.trim().split(' ').length > 1
       ? false
       : true;
 }
@@ -71,10 +70,10 @@ async function sendEmail(e) {
   spinner.style.display = 'inline-block';
 
   const templateParams = {
-    name: nameInput.value,
-    email: emailInput.value,
-    subject: subjectInput.value,
-    message: messageInput.value,
+    name: nameInput.value.trim(),
+    email: emailInput.value.trim(),
+    subject: subjectInput.value.trim(),
+    message: messageInput.value.trim(),
   };
 
   try {
@@ -86,6 +85,7 @@ async function sendEmail(e) {
     });
   } catch (error) {
     console.error('Failed to send email:', error);
+    alert('Failed to send email. Please try again later.');
   } finally {
     spinner.style.display = 'none';
     submitButton.style.display = 'block';

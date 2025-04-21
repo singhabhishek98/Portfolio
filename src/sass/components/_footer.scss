@@ -1,7 +1,7 @@
 /* Styles for the footer */
 #footer {
   background: linear-gradient(180deg, var(--bs-secondary), #1a1a1a);
-  padding: 1.2rem 0; /* Reduced padding */
+  padding: 1.2rem 0 4rem 0; /* Added bottom padding for fixed dark mode button */
   border-top: 3px solid var(--bs-accent);
   color: var(--bs-primary);
 }
@@ -72,12 +72,44 @@
   text-decoration: none;
   margin: 0 0.25rem;
   font-size: 1.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .footer-section.social-links a:hover {
-  color: var(--bs-accent);
+  /* Remove generic hover color to allow individual icon colors */
+  /* color: var(--bs-accent); */
   transform: scale(1.15);
+}
+
+/* Individual social media icon hover colors */
+.footer-section.social-links a[title="Facebook"]:hover {
+  color: #1877F2; /* Facebook blue */
+}
+
+.footer-section.social-links a[title="Instagram"]:hover {
+  color: #E4405F; /* Instagram pink */
+}
+
+.footer-section.social-links a[title="GitHub"]:hover {
+  color: #181717; /* GitHub black */
+}
+
+.footer-section.social-links a[title="LinkedIn"]:hover {
+  color: #0077B5; /* LinkedIn blue */
+}
+
+.footer-section.social-links a[title="YouTube"]:hover {
+  color: #FF0000; /* YouTube red */
+}
+
+.footer-section.social-links a[title="Twitter"]:hover {
+  color: #000000; /* X black */
 }
 
 .footer-bottom {
@@ -85,6 +117,14 @@
   text-align: center;
   font-size: 0.85rem;
   color: #cccccc;
+}
+
+/* Accessibility: focus styles for footer links */
+.footer-section.quick-links a:focus-visible,
+.footer-section.social-links a:focus-visible,
+.footer-section.copyright a:focus-visible {
+  outline: 2px solid var(--bs-accent);
+  outline-offset: 2px;
 }
 
 /* Responsive */
@@ -100,6 +140,15 @@
 
   .footer-section.social-links a {
     margin: 0.4rem;
+  }
+  /* Ensure no clipping of icons on mobile */
+  .footer-section.social-links {
+    overflow: visible;
+  }
+
+  /* Increase bottom padding to clear fixed dark mode button */
+  #footer {
+    padding-bottom: 6rem;
   }
 }
 /* End of footer styles */
