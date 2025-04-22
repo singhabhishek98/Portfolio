@@ -28,8 +28,12 @@
   .whatsapp-float {
     width: 50px;
     height: 50px;
-    bottom: 100px; /* increased bottom to avoid overlap with dark mode toggle */
+    bottom: 70px; /* increased bottom to avoid overlap with dark mode toggle */
     right: 5vw;
     font-size: 28px;
   }
 }
+.whatsapp-float {
+  bottom: calc(20px + 60px); /* 20px for darkmode + 60px spacing */
+}
+
