@@ -1,7 +1,7 @@
 /* Styles for the footer */
 #footer {
   background: linear-gradient(180deg, var(--bs-secondary), #1a1a1a);
-  padding: 1.2rem 0 4rem 0; /* Added bottom padding for fixed dark mode button */
+  padding: 1rem 0 2rem 0; /* Reduced padding to make footer smaller */
   border-top: 3px solid var(--bs-accent);
   color: var(--bs-primary);
 }
@@ -22,7 +22,7 @@
 
 .footer-section.copyright p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly reduced font size */
 }
 
 .footer-section.copyright a {
@@ -42,7 +42,7 @@
   color: var(--bs-primary);
   text-decoration: none;
   margin: 0 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly reduced font size */
   font-family: var(--font-secondary, sans-serif);
   transition: color 0.3s ease;
 }
@@ -113,7 +113,7 @@
 }
 
 .footer-bottom {
-  margin-top: 1rem;
+  margin-top: 0.5rem; /* Reduced margin to make footer smaller */
   text-align: center;
   font-size: 0.85rem;
   color: #cccccc;
@@ -146,9 +146,9 @@
     overflow: visible;
   }
 
-  /* Increase bottom padding to clear fixed dark mode button */
+  /* Adjust bottom padding to clear fixed dark mode button but smaller for responsiveness */
   #footer {
-    padding-bottom: 6rem;
+    padding-bottom: 2.5rem; /* Reduced from 6rem to 2.5rem for better responsiveness */
   }
 }
 /* End of footer styles */
